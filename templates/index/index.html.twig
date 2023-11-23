@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="mt-5">
+            Hey <strong>{{ app.user.email }}</strong>
+            <br/>
+            With our service can get and update all your Google Keep notes!
+        </div>
+        {% for note in notes %}
+            <div class="card mt-5">
+                <div class="card-body">
+                    note.content
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
