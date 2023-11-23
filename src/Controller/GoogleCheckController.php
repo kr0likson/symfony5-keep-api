@@ -57,10 +57,8 @@ class GoogleCheckController extends AbstractController
         $token = new UsernamePasswordToken($user, 'main', $user->getRoles());
         $tokenStorage->setToken($token);
 
-        // Dokończ proces uwierzytelniania
         $authenticatedToken = $authenticationManager->authenticate($token);
 
-        // Ustaw zautentykowany token
         $tokenStorage->setToken($authenticatedToken);
         return new RedirectResponse($this->generateUrl('index'));
     }
